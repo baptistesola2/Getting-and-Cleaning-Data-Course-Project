@@ -21,7 +21,9 @@ X_merge <- rbind (X_test,X_train)
 
 # 2 - Extracts only the measurements on the mean and standard deviation for each measurement.
 #Create vector to filter table X_merge
-X_merge <- rbind (X_test,X_train)
+filter <- c(grep("std()",features[,2],fixed = TRUE),grep("mean()",features[,2],fixed = TRUE))
+
+X_merge_mean_std <- X_merge[,filter]
 
 
 #3 - Uses descriptive activity names to name the activities in the data set
