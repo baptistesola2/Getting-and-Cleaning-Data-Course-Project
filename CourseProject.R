@@ -47,4 +47,5 @@ X_subject <- cbind(subjects_all, X_merge_label)
 grp <- group_by(X_subject, subject_id, activty_name)
 means_per_activity_subject <- summarise_each(grp,funs(mean))
 
+write.table(means_per_activity_subject,file = "./means_per_activity_subject.txt",row.names = FALSE)
 
